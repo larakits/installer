@@ -1,0 +1,24 @@
+{
+    "name": "larakits/installer",
+    "description": "Larakits command line installer",
+    "require": {
+        "guzzlehttp/guzzle": "~6.0",
+        "symfony/console": "^4.1",
+        "symfony/process": "^4.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iftekher Islam Sunny",
+            "email": "iftekhersunny@gmail.com"
+        }
+    ],
+    "bin": [
+        "bin/larakits"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Larakits\\Installer\\Console\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+if (file_exists(__DIR__ . '/../../../autoload.php')) {
+    require __DIR__ . '/../../../autoload.php';
+} else {
+    require __DIR__ . '/../vendor/autoload.php';
+}
+
+use Symfony\Component\Console\Application;
+use Larakits\Installer\Console\NewCommand;
+use Larakits\Installer\Console\RegisterCommand;
+
+define('LARAKITS_BASE_URL', 'https://larakits.com');
+
+$application = new Application('LARAKITS', '0.1.0');
+
+// registering console commands
+$application->add(new NewCommand());
+$application->add(new RegisterCommand());
+
+$application->run();
