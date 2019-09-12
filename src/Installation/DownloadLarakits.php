@@ -26,7 +26,9 @@ class DownloadLarakits extends Base
 
         $larakitsPath = $this->homePath() . '/.larakits/larakits.zip';
 
-        $response = (new Client)->request('GET', LARAKITS_BASE_URL . '/api/releases/latest/download?api_token=' . $config->token);
+        $response = (new Client)->request('GET', LARAKITS_BASE_URL . '/api/releases/latest/download?api_token=' . $config->token, [
+            'headers' => ['Accept' => 'application/json']
+        ]);
 
         file_put_contents($larakitsPath, (string) $response->getBody());
 
