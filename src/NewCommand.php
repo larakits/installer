@@ -72,6 +72,6 @@ class NewCommand extends Command
             (new $installer($this, $name, $path))->install();
         }
 
-        $output->writeln(['', "<comment>Congratulations! Larakits setup done. Don't forget to run php artisan migrate</comment>", '']);
+        $output->writeln(['', "<comment>Congratulations! Larakits setup is done. Don't forget to run php artisan migrate</comment>", '']);
     }
 }
