@@ -22,11 +22,9 @@ class DownloadLarakits extends Base
         $this->command->output->writeln('<info>Downloading LARAKITS...</info>');
         $this->command->output->newLine();
 
-        $config = json_decode(file_get_contents($this->getConfig()));
-
         $larakitsPath = $this->homePath() . '/.larakits/larakits.zip';
 
-        $response = (new Client)->request('GET', LARAKITS_BASE_URL . '/api/releases/latest/download?api_token=' . $config->token, [
+        $response = (new Client)->request('GET', LARAKITS_BASE_URL . '/api/releases/latest/download?api_token=' . $this->getToken(), [
             'headers' => ['Accept' => 'application/json']
         ]);
 

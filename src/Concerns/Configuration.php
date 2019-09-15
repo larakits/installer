@@ -55,4 +55,14 @@ trait Configuration
             json_encode(['token' => $token], JSON_PRETTY_PRINT)
         );
     }
+
+    /**
+     * Get Larakits API Token.
+     *
+     * @return string
+     */
+    protected function getToken() : string
+    {
+        return json_decode(file_get_contents($this->getConfig()))->token;
+    }
 }

@@ -9,6 +9,7 @@ if (file_exists(__DIR__ . '/../../../autoload.php')) {
 
 use Symfony\Component\Console\Application;
 use Larakits\Installer\Console\NewCommand;
+use Larakits\Installer\Console\TokenCommand;
 use Larakits\Installer\Console\RegisterCommand;
 
 define('LARAKITS_BASE_URL', 'https://larakits.com');
@@ -18,5 +19,6 @@ $application = new Application('LARAKITS', '0.1.2');
 // registering console commands
 $application->add(new NewCommand());
 $application->add(new RegisterCommand());
+$application->add(new TokenCommand());
 
 $application->run();
