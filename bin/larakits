@@ -14,7 +14,7 @@ use Larakits\Installer\Console\RegisterCommand;
 
 define('LARAKITS_BASE_URL', 'https://larakits.com');
 
-$application = new Application('LARAKITS', '0.1.2');
+$application = new Application('LARAKITS INSTALLER', '1.0.0');
 
 // registering console commands
 $application->add(new NewCommand());
