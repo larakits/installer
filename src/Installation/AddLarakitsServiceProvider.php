@@ -17,7 +17,7 @@ class AddLarakitsServiceProvider extends Base
             $path,
             str_replace(
                 "        App\Providers\AppServiceProvider::class,",
-                "        Laravel\Socialite\SocialiteServiceProvider::class,\n        Larakits\Providers\LarakitsServiceProvider::class,\n        App\Providers\AppServiceProvider::class,",
+                "        Larakits\Providers\LarakitsServiceProvider::class,\n        App\Providers\AppServiceProvider::class,",
                 file_get_contents($path)
             )
         );

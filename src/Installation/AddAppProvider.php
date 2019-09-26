@@ -16,6 +16,24 @@ class AddAppProvider extends Base
         file_put_contents(
             $path,
             str_replace(
+                "        Larakits\Providers\LarakitsServiceProvider::class,",
+                "        Laravel\Socialite\SocialiteServiceProvider::class,\n        Larakits\Providers\LarakitsServiceProvider::class,",
+                file_get_contents($path)
+            )
+        );
+
+        file_put_contents(
+            $path,
+            str_replace(
+                "        'View' => Illuminate\Support\Facades\View::class,",
+                "        'View' => Illuminate\Support\Facades\View::class,\n        'Socialite' => Laravel\Socialite\Facades\Socialite::class,",
+                file_get_contents($path)
+            )
+        );
+
+        file_put_contents(
+            $path,
+            str_replace(
                 "        App\Providers\RouteServiceProvider::class,",
                 "        App\Providers\RouteServiceProvider::class,\n        App\Providers\LarakitsServiceProvider::class,",
                 file_get_contents($path)
