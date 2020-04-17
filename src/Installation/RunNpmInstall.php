@@ -22,7 +22,7 @@ class RunNpmInstall extends Base
         $this->command->output->writeln('<info>Installing NPM Dependencies...</info>');
         $this->command->output->newLine();
 
-        $process = new Process("cd $this->path && npm install");
+        $process = Process::fromShellCommandline("cd $this->path && npm install");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

@@ -13,7 +13,7 @@ class CopyEnv extends Base
      */
     public function install() : void
     {
-        $process = new Process("cd $this->path && cp .env.example .env");
+        $process = Process::fromShellCommandline("cd $this->path && cp .env.example .env");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

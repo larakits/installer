@@ -17,7 +17,7 @@ class CreateNewLaravelProject extends Base
         $this->command->output->writeln('<info>Installing Laravel...</info>');
         $this->command->output->newLine();
 
-        $process = new Process("laravel new {$this->name} --force");
+        $process = Process::fromShellCommandline("laravel new {$this->name} --force");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

@@ -13,7 +13,7 @@ class CreateAppKey extends Base
      */
     public function install() : void
     {
-        $process = new Process("cd $this->path && php artisan key:generate --ansi");
+        $process = Process::fromShellCommandline("cd $this->path && php artisan key:generate --ansi");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

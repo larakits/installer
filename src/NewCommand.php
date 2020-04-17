@@ -41,9 +41,8 @@ class NewCommand extends Command
      *
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output) : void
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         if (!file_exists($this->getConfig())) {
             $output->writeln(['', '<error>Please verify your API token</error>', '']);
@@ -73,5 +72,7 @@ class NewCommand extends Command
         }
 
         $output->writeln(['', "<comment>Congratulations! Larakits setup is done. Don't forget to run php artisan migrate</comment>", '']);
+
+        return 1;
     }
 }

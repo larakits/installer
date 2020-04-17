@@ -19,7 +19,7 @@ class RunLarakitsInstall extends Base
 
         $this->command->output->newLine();
 
-        $process = new Process("cd $this->path && php artisan larakits:install");
+        $process = Process::fromShellCommandline("cd $this->path && php artisan larakits:install");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

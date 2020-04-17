@@ -27,10 +27,11 @@ class TokenCommand extends Command
      *
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output) : void
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('<info>Larakits API Token: </info>' . $this->getToken());
+
+        return 1;
     }
 }

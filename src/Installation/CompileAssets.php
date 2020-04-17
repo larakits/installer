@@ -19,7 +19,7 @@ class CompileAssets extends Base
 
         $this->command->output->writeln('<info>Compiling Assets...</info>');
 
-        $process = new Process("cd $this->path && npm run dev --no-progress");
+        $process = Process::fromShellCommandline("cd $this->path && npm run dev --no-progress");
 
         $process->setTimeout(null)->run(function ($type, $line) {
             $this->command->output->write($line);

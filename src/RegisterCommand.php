@@ -31,9 +31,8 @@ class RegisterCommand extends Command
      *
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output) : void
+    protected function execute(InputInterface $input, OutputInterface $output)
     {
         $token = $input->getArgument('token');
 
@@ -57,5 +56,7 @@ class RegisterCommand extends Command
         } catch (Exception $error) {
             $output->writeln(['', '<error> Please provide a valid API token </error>', '']);
         }
+
+        return 1;
     }
 }
