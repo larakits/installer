@@ -3,8 +3,8 @@
     "description": "Larakits command line installer",
     "require": {
         "guzzlehttp/guzzle": "~6.0",
-        "symfony/console": "^4.1",
-        "symfony/process": "^4.2"
+        "symfony/console": "^5.0",
+        "symfony/process": "^5.0"
     },
     "license": "MIT",
     "authors": [
